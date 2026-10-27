@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,27 +6,34 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
 const EMAILJS_SERVICE_ID  = 'service_yu7a6mf';
-const EMAILJS_TEMPLATE_ID = 'template_xia284r'; // ← substitua pelo seu Template ID do painel EmailJS
+const EMAILJS_TEMPLATE_ID = 'template_xia284r';
 const EMAILJS_PUBLIC_KEY  = '9Amrf_5a1In9_cNBT';
 
 const Contact = () => {
-  const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!formRef.current) return;
-
     setStatus('loading');
     try {
-      await emailjs.sendForm(
+      await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        formRef.current,
+        {
+          name:    form.name,
+          email:   form.email,
+          subject: form.subject,
+          message: form.message,
+        },
         EMAILJS_PUBLIC_KEY
       );
       setStatus('success');
-      formRef.current.reset();
+      setForm({ name: '', email: '', subject: '', message: '' });
     } catch (err) {
       console.error('EmailJS error:', err);
       setStatus('error');
@@ -128,7 +135,7 @@ const Contact = () => {
                 </div>
               )}
 
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -137,6 +144,8 @@ const Contact = () => {
                     <Input
                       id="name"
                       name="name"
+                      value={form.name}
+                      onChange={handleChange}
                       placeholder="Digite seu nome"
                       required
                       className="w-full"
@@ -150,6 +159,8 @@ const Contact = () => {
                       id="email"
                       name="email"
                       type="email"
+                      value={form.email}
+                      onChange={handleChange}
                       placeholder="Digite seu email"
                       required
                       className="w-full"
@@ -164,6 +175,8 @@ const Contact = () => {
                   <Input
                     id="subject"
                     name="subject"
+                    value={form.subject}
+                    onChange={handleChange}
                     placeholder="Digite o assunto"
                     required
                     className="w-full"
@@ -177,6 +190,8 @@ const Contact = () => {
                   <Textarea
                     id="message"
                     name="message"
+                    value={form.message}
+                    onChange={handleChange}
                     placeholder="Descreva aqui sua dúvida ou resumo sobre sua ideia de projeto..."
                     required
                     className="w-full min-h-[150px]"
