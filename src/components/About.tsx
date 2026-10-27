@@ -9,8 +9,8 @@ const About = () => {
     <section id="about" className="section-padding bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-portfolio-violet font-medium mb-2">Um Pouco Sobre Mim</p>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-portfolio-blue mb-4">Minha Journada & Expertise</h2>
+          <p className="text-portfolio-violet font-medium mb-2">Sobre a Nossa Agência</p>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-portfolio-blue mb-4">Nossa Jornada & Expertise Corporativa</h2>
           <div className="w-20 h-1 bg-portfolio-indigo mx-auto"></div>
         </div>
 
@@ -19,7 +19,7 @@ const About = () => {
             <div className="relative">
               <div className="w-full max-w-[800px] h-[650px] rounded-lg overflow-hidden shadow-xl mb-12">
                 <img
-                  src={minhaFotoDePerfil} // <-- ALtere AQUI para usar a variável importada
+                  src={minhaFotoDePerfil}
                   alt="Working on design"
                   className="w-full h-full object-cover object-center"
                 />
@@ -27,7 +27,7 @@ const About = () => {
               <div className="absolute bottom-4 right-4 bg-white shadow-lg rounded-lg p-4 md:p-6">
                 <div className="text-center">
                   <p className="text-portfolio-blue font-bold text-lg md:text-xl mb-1">14+ Anos</p>
-                  <p className="text-gray-600 text-sm md:text-base">Experiencia</p>
+                  <p className="text-gray-600 text-sm md:text-base">Experiência</p>
                 </div>
               </div>
             </div>
@@ -35,49 +35,47 @@ const About = () => {
 
           <div>
             <h3 className="text-2xl font-serif font-bold text-portfolio-blue mb-4">
-                Engenheiro de Software Full Stack Sênior Web & Mobile.
+                Agência de Tecnologia Full Stack Especializada em Soluções Corporativas.
             </h3>
             <p className="text-gray-600 mb-8">
-  Com mais de 14 anos na vanguarda do desenvolvimento de software, minha atuação é centrada na engenharia de sistemas de alta complexidade, orientados a performance, escalabilidade e impacto direto no negócio. Sou especialista em transformar requisitos estratégicos em ecossistemas digitais robustos, unindo arquitetura backend de alta confiabilidade com interfaces modernas orientadas à experiência do usuário.
+  Com mais de 14 anos na vanguarda do desenvolvimento de software, a Info Tech Ltda. atua como agência de tecnologia EPP, oferecendo soluções corporativas de alta complexidade, orientadas a performance, escalabilidade e impacto direto no negócio. Somos especialistas em transformar requisitos estratégicos em ecossistemas digitais robustos, unindo arquitetura backend de alta confiabilidade com interfaces modernas orientadas à experiência do usuário.
 
-  Minha expertise abrange o ciclo completo de desenvolvimento para diversos modelos de negócio, incluindo:
+  Nossa expertise abrange o ciclo completo de desenvolvimento para diversos modelos de negócio, incluindo:
 <br></br>
 
 
-  <span className="font-bold text-blue-600">Sistemas Críticos:</span> Desenvolvimento de <span className="font-bold text-blue-600">ERPs</span> com alta concorrência e integridade transacional, <span className="font-bold text-blue-600">PDVs</span> de baixa latência e plataformas de gestão com alta disponibilidade e tolerância a falhas.<br></br>
+  <span className="font-bold text-blue-600">Sistemas Críticos Corporativos:</span> Desenvolvimento de <span className="font-bold text-blue-600">ERPs</span> com alta concorrência e integridade transacional, <span className="font-bold text-blue-600">PDVs</span> de baixa latência e plataformas de gestão com alta disponibilidade e tolerância a falhas.<br></br>
 
 
 
-  <span className="font-bold text-blue-600">Produtos e Escala:</span> Criação de <span className="font-bold text-blue-600">MVPs</span> validados em produção com foco em time-to-market e tração, além de arquiteturas <span className="font-bold text-blue-600">MVC</span> e padrões escaláveis preparados para crescimento contínuo.<br></br>
+  <span className="font-bold text-blue-600">Produtos Digitais e Escala:</span> Criação de <span className="font-bold text-blue-600">MVPs</span> validados em produção com foco em time-to-market e tração, além de arquiteturas <span className="font-bold text-blue-600">MVC</span> e padrões escaláveis preparados para crescimento contínuo.<br></br>
 
 
 
   <span className="font-bold text-blue-600">Soluções de Mercado:</span> Implementação de plataformas <span className="font-bold text-blue-600">White Label</span> altamente customizáveis e <span className="font-bold text-blue-600">SaaS</span> multi-tenant com foco em escalabilidade horizontal e recorrência.<br></br>
 
-
-
   <span className="font-bold text-blue-600">Performance Digital:</span> Desenvolvimento de <span className="font-bold text-blue-600">E-commerces</span> otimizados para conversão e performance sob carga, <span className="font-bold text-blue-600">Landing Pages</span> orientadas a ROI em tráfego pago e aplicações <span className="font-bold text-blue-600">Mobile</span> nativas e híbridas com alta responsividade.<br></br>
 </p>
 
 <p className="text-gray-600 mb-8">
-  Minha abordagem é orientada a resultados mensuráveis: entrego código limpo, arquiteturas bem definidas e experiências com alta retenção. Atuo com foco em <span className="font-bold text-blue-600">SEO estratégico</span>, <span className="font-bold text-blue-600">performance extrema</span> e otimização contínua de métricas de negócio. Mais do que desenvolver software, construo soluções que impulsionam crescimento, aumentam eficiência operacional e sustentam escala para empresas que exigem excelência técnica.
+  Nossa abordagem é orientada a resultados mensuráveis: entregamos código limpo, arquiteturas bem definidas e experiências com alta retenção. Atuamos com foco em <span className="font-bold text-blue-600">SEO estratégico</span>, <span className="font-bold text-blue-600">performance extrema</span> e otimização contínua de métricas de negócio. Mais do que desenvolver software, construímos soluções que impulsionam crescimento, aumentam eficiência operacional e sustentam escala para empresas que exigem excelência técnica.
 </p>
             <div className="grid grid-cols-2 gap-6 mb-8">
               <div>
-                <h4 className="font-bold text-portfolio-blue mb-2">Nome:</h4>
-                <p className="text-gray-600">Josué Geraldo Gomes</p>
+                <h4 className="font-bold text-portfolio-blue mb-2">Nome da Empresa:</h4>
+                <p className="text-gray-600">Info Tech Ltda.</p>
               </div>
               <div>
-                <h4 className="font-bold text-portfolio-blue mb-2">Email:</h4>
-                <p className="text-gray-600">josuegeraldoata@hotmail.com</p>
+                <h4 className="font-bold text-portfolio-blue mb-2">Email Corporativo:</h4>
+                <p className="text-gray-600">contato@infotech.com.br</p>
               </div>
               <div>
-                <h4 className="font-bold text-portfolio-blue mb-2">localização:</h4>
+                <h4 className="font-bold text-portfolio-blue mb-2">Localização:</h4>
                 <p className="text-gray-600">São Paulo, Brazil</p>
               </div>
               <div>
-                <h4 className="font-bold text-portfolio-blue mb-2">Disponibilidade:</h4>
-                <p className="text-gray-600">Freelancer e em tempo integral</p>
+                <h4 className="font-bold text-portfolio-blue mb-2">Porte da Empresa:</h4>
+                <p className="text-gray-600">EPP - Empresa de Pequeno Porte</p>
               </div>
             </div>
 
@@ -86,7 +84,7 @@ const About = () => {
         </div>
 
         <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold inline-block">Resumo De Minha Experiências E Cursos</h2>
+          <h2 className="text-2xl font-bold inline-block">Resumo Da Nossa Experiência E Cursos</h2>
         </div>
         <Timeline
           courses={[
@@ -96,9 +94,9 @@ const About = () => {
           ]}
           experiences={[
             {
-              title: 'FREELANCER 99FREELAS',
+              title: 'Info Tech Ltda. EPP',
               period: '2025 Atual',
-              description: 'desenvolvendo Projetos, Pra Diversos Clientes Que Tem Demanda Na Plataforma De Freelancer.',
+              description: 'Desenvolvendo projetos corporativos para diversos clientes, com foco em soluções Web e Mobile de alta complexidade.',
             },
 
              {

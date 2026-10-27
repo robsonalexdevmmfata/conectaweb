@@ -9,12 +9,12 @@ const Hero = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="order-2 lg:order-1">
-            <p className="text-portfolio-violet font-medium mb-4 animate-fade-in">Olá, Eu Sou ...</p>
+            <p className="text-portfolio-violet font-medium mb-4 animate-fade-in">Olá, Nós Somos a ...</p>
             <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-portfolio-blue animate-slide-up">
-              Engenheiro<span className="text-gradient">  De Software </span> <span className="text-gradient"> Sênior</span>
+              Info<span className="text-gradient"> Tech</span> <span className="text-gradient"> Ltda</span>
             </h1>
             <p className="text-gray-600 text-lg mb-8 max-w-lg animate-slide-up" style={{animationDelay: '0.2s'}}>
-              Especialista no desenvolvimento de ecossistemas Web e Mobile de alta complexidade. Unindo o rigor técnico da engenharia com a estética do UI Design, entrego soluções focadas em performance extrema, escalabilidade e SEO estratégico. Transformo ideias em produtos digitais de impacto há mais de 14 anos.
+              Agência de Tecnologia EPP especializada no desenvolvimento de ecossistemas Web e Mobile de alta complexidade. Unindo o rigor técnico da engenharia com a estética do UI Design, entregamos soluções corporativas focadas em performance extrema, escalabilidade e SEO estratégico. Transformamos ideias em produtos digitais de impacto há mais de 14 anos.
             </p>
             <div className="flex flex-wrap gap-4 animate-slide-up" style={{animationDelay: '0.4s'}}>
               <a

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MenuIcon, XIcon } from "lucide-react";
-import logo from '../apple-touch-icon.png';
+import logo from '../logoinfotech.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,8 +34,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a href="#home" className="flex items-center">
           <img src={logo} alt="Logo" className="h-8 w-auto logo" />
-          <a href="#home" className="text-2xl font-serif font-bold text-portfolio-blue">
-          Info<span className="text-portfolio-accent"> Tech</span></a>
+          <span className="text-2xl font-serif font-bold text-portfolio-blue"></span>
         </a>
 
         {/* Desktop Menu */}
