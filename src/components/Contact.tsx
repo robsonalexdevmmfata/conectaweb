@@ -1,44 +1,12 @@
-import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
+import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
-
-const EMAILJS_SERVICE_ID  = 'service_yu7a6mf';
-const EMAILJS_TEMPLATE_ID = 'template_xia284r';
-const EMAILJS_PUBLIC_KEY  = '9Amrf_5a1In9_cNBT';
+import { Mail, Phone, MapPin, CheckCircle, Loader2 } from "lucide-react";
 
 const Contact = () => {
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setStatus('loading');
-    try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          name:    form.name,
-          email:   form.email,
-          subject: form.subject,
-          message: form.message,
-        },
-        EMAILJS_PUBLIC_KEY
-      );
-      setStatus('success');
-      setForm({ name: '', email: '', subject: '', message: '' });
-    } catch (err) {
-      console.error('EmailJS error:', err);
-      setStatus('error');
-    }
-  };
+  const [state, handleSubmit] = useForm('xljjbyek');
 
   return (
     <section id="contact" className="section-padding bg-slate-50">
@@ -121,98 +89,87 @@ const Contact = () => {
                 Envie-nos uma mensagem
               </h3>
 
-              {status === 'success' && (
-                <div className="flex items-center gap-3 bg-green-50 border border-green-200 text-green-700 rounded-lg px-4 py-3 mb-6">
-                  <CheckCircle className="h-5 w-5 shrink-0" />
-                  <p className="text-sm font-medium">Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+              {state.succeeded ? (
+                <div className="flex flex-col items-center justify-center py-12 gap-4 text-center">
+                  <CheckCircle className="h-16 w-16 text-green-500" />
+                  <h4 className="text-xl font-bold text-portfolio-blue">Mensagem enviada!</h4>
+                  <p className="text-gray-600">Obrigado pelo contato. Nossa equipe retornará em breve.</p>
                 </div>
-              )}
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                        Seu Nome
+                      </label>
+                      <Input
+                        id="name"
+                        name="name"
+                        placeholder="Digite seu nome"
+                        required
+                        className="w-full"
+                      />
+                      <ValidationError field="name" prefix="Nome" errors={state.errors} className="text-red-500 text-xs mt-1" />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                        Seu Email
+                      </label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="Digite seu email"
+                        required
+                        className="w-full"
+                      />
+                      <ValidationError field="email" prefix="Email" errors={state.errors} className="text-red-500 text-xs mt-1" />
+                    </div>
+                  </div>
 
-              {status === 'error' && (
-                <div className="flex items-center gap-3 bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 mb-6">
-                  <AlertCircle className="h-5 w-5 shrink-0" />
-                  <p className="text-sm font-medium">Erro ao enviar mensagem. Tente novamente ou entre em contato pelo WhatsApp.</p>
-                </div>
-              )}
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                      Seu Nome
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                      Assunto
                     </label>
                     <Input
-                      id="name"
-                      name="name"
-                      value={form.name}
-                      onChange={handleChange}
-                      placeholder="Digite seu nome"
+                      id="subject"
+                      name="subject"
+                      placeholder="Digite o assunto"
                       required
                       className="w-full"
                     />
                   </div>
+
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Seu Email
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                      Mensagem
                     </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={form.email}
-                      onChange={handleChange}
-                      placeholder="Digite seu email"
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="Descreva aqui sua dúvida ou resumo sobre sua ideia de projeto..."
                       required
-                      className="w-full"
+                      className="w-full min-h-[150px]"
                     />
+                    <ValidationError field="message" prefix="Mensagem" errors={state.errors} className="text-red-500 text-xs mt-1" />
                   </div>
-                </div>
 
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                    Assunto
-                  </label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    value={form.subject}
-                    onChange={handleChange}
-                    placeholder="Digite o assunto"
-                    required
-                    className="w-full"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Mensagem
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={form.message}
-                    onChange={handleChange}
-                    placeholder="Descreva aqui sua dúvida ou resumo sobre sua ideia de projeto..."
-                    required
-                    className="w-full min-h-[150px]"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  disabled={status === 'loading'}
-                  className="w-full bg-portfolio-indigo hover:bg-portfolio-violet text-white transition-all py-6"
-                >
-                  {status === 'loading' ? (
-                    <span className="flex items-center justify-center gap-2">
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                      Enviando...
-                    </span>
-                  ) : (
-                    'Enviar Mensagem'
-                  )}
-                </Button>
-              </form>
+                  <Button
+                    type="submit"
+                    disabled={state.submitting}
+                    className="w-full bg-portfolio-indigo hover:bg-portfolio-violet text-white transition-all py-6"
+                  >
+                    {state.submitting ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        Enviando...
+                      </span>
+                    ) : (
+                      'Enviar Mensagem'
+                    )}
+                  </Button>
+                </form>
+              )}
             </div>
           </div>
         </div>
