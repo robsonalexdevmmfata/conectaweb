@@ -9,12 +9,15 @@ const Hero = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="order-2 lg:order-1">
-            <p className="text-portfolio-violet font-medium mb-4 animate-fade-in">Olá, Nós Somos a ...</p>
+            <p className="text-portfolio-violet font-medium mb-4 animate-fade-in">Agência de Tecnologia em Andradina-SP</p>
             <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 text-portfolio-blue animate-slide-up">
               Info<span className="text-gradient"> Tech</span> <span className="text-gradient"> Ltda</span>
             </h1>
+            <h2 className="text-lg font-medium text-gray-500 mb-4 animate-slide-up">
+              Criação de Sites · Apps Mobile · E-commerce · ERP · SaaS · MVPs
+            </h2>
             <p className="text-gray-600 text-lg mb-8 max-w-lg animate-slide-up" style={{animationDelay: '0.2s'}}>
-              Agência de Tecnologia EPP especializada no desenvolvimento de ecossistemas Web e Mobile de alta complexidade. Unindo o rigor técnico da engenharia com a estética do UI Design, entregamos soluções corporativas focadas em performance extrema, escalabilidade e SEO estratégico. Transformamos ideias em produtos digitais de impacto há mais de 14 anos.
+              Agência de Tecnologia EPP em <strong>Andradina-SP</strong> especializada no desenvolvimento de sites profissionais, aplicativos mobile, e-commerce, sistemas ERP, SaaS e MVPs para startups. Atendemos empresas em <strong>Andradina, Araçatuba, Birigui, Penápolis, Guararapes, Mirandópolis, Ilha Solteira</strong> e em todo o Brasil há mais de 14 anos.
             </p>
             <div className="flex flex-wrap gap-4 animate-slide-up" style={{animationDelay: '0.4s'}}>
               <a
