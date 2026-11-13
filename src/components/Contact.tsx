@@ -59,7 +59,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-portfolio-blue mb-1">Localização:</h4>
-                    <p className="text-gray-600">Andradina, São Paulo, Brazil</p>
+                    <p className="text-gray-600">Andradina, São Paulo, Brasil</p>
                   </div>
                 </div>
               </div>

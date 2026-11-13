@@ -20,7 +20,7 @@ const About = () => {
               <div className="w-full max-w-[800px] h-[650px] rounded-lg overflow-hidden shadow-xl mb-12">
                 <img
                   src={minhaFotoDePerfil}
-                  alt="Working on design"
+                  alt="Info Tech — desenvolvimento de sistemas em Andradina-SP"
                   className="w-full h-full object-cover object-center"
                 />
               </div>
@@ -67,11 +67,12 @@ const About = () => {
               </div>
               <div>
                 <h4 className="font-bold text-portfolio-blue mb-2">Email Corporativo:</h4>
-                <p className="text-gray-600">contato@infotech.com.br</p>
+                <p className="text-gray-600 break-all">agenciainfotechltdammfata@gmail.com</p>
+                <p className="text-xs text-amber-700 mt-1">Pendência: há e-mails divergentes no histórico do projeto — confirmar o oficial.</p>
               </div>
               <div>
                 <h4 className="font-bold text-portfolio-blue mb-2">Localização:</h4>
-                <p className="text-gray-600">São Paulo, Brazil</p>
+                <p className="text-gray-600">Andradina, São Paulo, Brasil</p>
               </div>
               <div>
                 <h4 className="font-bold text-portfolio-blue mb-2">Porte da Empresa:</h4>
