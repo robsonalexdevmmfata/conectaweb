@@ -30,7 +30,7 @@ const Index = () => {
   return (
     <div className="min-h-screen w-full">
       <SeoHead
-        title="Sistema para Minha Empresa em Andradina SP | Info Tech"
+        title="Info Tech Ltda — Agência de Tecnologia"
         description="Cansado de planilhas? A Info Tech cria sistema personalizado para organizar clientes, vendas e estoque em Andradina-SP. Solicite um orçamento."
         path="/"
         jsonLd={[
